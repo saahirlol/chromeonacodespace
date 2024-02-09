@@ -1,0 +1,13 @@
+{
+    "name": "Quick Chrome",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:0-buster",
+    "settings": { 
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "ms-azuretools.vscode-docker" // Docker extension for VS Code
+    ],
+    "postCreateCommand": "docker run -d  --name=chrome  --privileged  -e PUID=1000  -e PGID=1000  -e TZ=Etc/UTC  -p 3000:3000  --restart always  ghcr.io/saahirlol/chromeeee:main",
+    "remoteUser": "vscode"
+  }
+
